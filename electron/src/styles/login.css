@@ -1,0 +1,12 @@
+.main-login {
+    height: 800px;
+}
+
+.login-btn-center {
+    position: relative;
+    top: 50%;
+    margin-top: 150px;
+    margin: 0 auto;
+    max-width: 350px;
+    padding: 40px 40px;
+}

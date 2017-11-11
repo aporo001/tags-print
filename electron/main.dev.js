@@ -10,14 +10,14 @@ const { BrowserWindow } = require('electron')
 let mainWindow;
 
 const createWindow = () => {
-    mainWindow = new BrowserWindow({ fullscreen: true, closable: true, resizable: true })
+    mainWindow = new BrowserWindow({ width:600, height: 800, closable: true, resizable: true })
         //mainWindow = new BrowserWindow({fullscreen: true, closable:true, resizable:true })
 
     // and load the index.html of the app.
     mainWindow.loadURL('http://localhost:3000');
 
     // Open the DevTools.
-    //mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on('closed', function() {

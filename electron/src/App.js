@@ -1,19 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
+import "font-awesome/css/font-awesome.css";
+
+import Login from "./components/login";
 
 class App extends Component {
   render() {
+    let loggedIn = false;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <HashRouter>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => (loggedIn ? <div /> : <Redirect to="/login" />)}
+          />
+          <Route path="/login" component={Login} />
+        </Switch>
+      </HashRouter>
     );
   }
 }
